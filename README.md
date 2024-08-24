@@ -1,8 +1,8 @@
-###  DATE: 
+###  DATE: 24-08-2024
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME: VISHWARAJ G.
+###  ROLL NO : 212223220125
+###  DEPARTMENT: B.Tech.INFORMATION TECHNOLOGY
 
 
 # EXPERIMENT--02-INTERFACING-A-DIGITAL-INPUT-TO-IOT-DEVELOPMENT-BOARD-
@@ -77,12 +77,39 @@ The full form of an ARM is an advanced reduced instruction set computer (RISC) m
 
 
 ## STM 32 CUBE PROGRAM :
+```
+#include "main.h"
+#include "stdio.h"
+#include "stdbool.h"
+bool IRstatus;
+int main(void)
+{
+  IRstatus = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3);
 
+  while (1)
+  {
+    /* USER CODE END WHILE */
+   if (IRstatus == 1){
+		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,GPIO_PIN_RESET);
+		  HAL_Delay(1000);
+		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,GPIO_PIN_SET);
+		  HAL_Delay(1000);
+	  }
+	  else{
+		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,GPIO_PIN_RESET);
+		  HAL_Delay(1000);
+	  }
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */
+}
 
+```
 
 ## Output  :
  
- 
+ ![image](https://github.com/user-attachments/assets/ddaf0d63-a5e9-40cd-a8d1-7b56eec625a1)
+
  
  
 ## Result :
